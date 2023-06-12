@@ -20,7 +20,7 @@ export function How(){
     class="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
   >
     <div
-      class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+      class="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
     >
       <Image className="w-40 xl:mb-10" src={wallet}></Image>
 
@@ -28,7 +28,7 @@ export function How(){
     </div>
 
     <div
-      class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+      class="absolute p-4 opacity-0 duration-300 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
     >
       <h3 class="mt-4 text-xl font-medium sm:text-2xl">Create Wallet</h3>
 
@@ -48,7 +48,7 @@ export function How(){
     class="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
   >
     <div
-      class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+      class="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
     >
       <Image className="w-40 xl:mb-10" src={bn}></Image>
 
@@ -56,7 +56,7 @@ export function How(){
     </div>
 
     <div
-      class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+      class="absolute p-4 opacity-0 duration-300 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
     >
       <h3 class="mt-4 text-xl font-medium sm:text-2xl">Get Some BNB</h3>
 
@@ -76,7 +76,7 @@ export function How(){
     class="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
   >
     <div
-      class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+      class="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
     >
       <Image className="w-40 xl:mb-10" src={pan}></Image>
 
@@ -84,7 +84,7 @@ export function How(){
     </div>
 
     <div
-      class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+      class="absolute p-4 opacity-0 duration-300 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
     >
       <h3 class="mt-4 text-xl font-medium sm:text-2xl">Go to PancakeSwap</h3>
 
@@ -104,7 +104,7 @@ export function How(){
     class="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
   >
     <div
-      class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+      class="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
     >
       <Image className="w-80 xl:mb-10" src={swap}></Image>
 
@@ -112,7 +112,7 @@ export function How(){
     </div>
 
     <div
-      class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+      class="absolute p-4 opacity-0 duration-300 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
     >
       <h3 class="mt-4 text-xl font-medium sm:text-2xl">Swap BNB for BOB</h3>
 
