@@ -6,9 +6,10 @@ export default function About(){
         <div className="mx-8 my-8 md:mx-28 md:my-32 ">
             <div className="relative z-10">
         <h1 className=" font-bold font-Orbitron md:text-5xl xl:text-7xl text-white">ABOUT</h1>
-        <h2 className="xl:text-4xl md:text-xl font-Roboto my-8 md:my-12 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Sed risus pretium quam vulputate dignissim suspendisse in. Hendrerit dolor magna eget est lorem ipsum dolor sit. Tempus quam pellentesque nec nam aliquam sem. Blandit massa enim nec dui nunc mattis. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Lorem donec massa sapien faucibus et molestie. In metus vulputate eu scelerisque felis imperdiet. Dictum varius duis at consectetur lorem donec. Ornare lectus sit amet est placerat in egestas. Vel eros donec ac odio tempor orci. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Porttitor rhoncus dolor purus non enim. </h2>
+        <h2 className="xl:text-4xl md:text-xl font-Roboto my-8 md:my-12 text-white">$BOB is a groundbreaking token built on the Binance Smart Chain (BSC) that aims to bridge the gap between two of the most influential cryptocurrencies - Bitcoin (BTC) and Binance Coin (BNB). As the first of its kind, $BOB embodies the robustness of Bitcoin and the flexibility of BNB, offering a unique investment opportunity in the crypto space.</h2>
+        <h2 className="xl:text-4xl md:text-xl font-Roboto my-8 md:my-12 text-white">With a total supply of 1.5 billion tokens, $BOB employs a strategic transaction tax structure to foster a healthy and sustainable ecosystem. A 7% tax is applied to all sell transactions, which increases to 20-30% for transactions occurring within the first 30 minutes of purchase. This is designed to discourage rapid trading and promote long-term holding. </h2>    
+        <h2 className="xl:text-4xl md:text-xl font-Roboto my-8 md:my-12 text-white"> Join us on this exciting journey as we venture into a new era of cryptocurrency, where Bitcoin and BNB are no longer worlds apart, but part of a unified and prosperous ecosystem. Welcome to the future. Welcome to $BOB. </h2>
             </div>
-           
         </div>
     )
 }

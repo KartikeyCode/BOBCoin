@@ -5,11 +5,11 @@ export default function Roadmap(){
             <div id="Roadmap" className="mx-8 my-16 xl:my-60 md:mx-28 md:my-32 ">
         <h1 className="font-bold text-white font-Orbitron md:text-5xl xl:text-7xl">ROADMAP</h1>
             
-            <div className="flex mt-5 xl:mt-20">
+            <div className="xl:flex  mt-5 xl:mt-20">
 
             <a
   
-  class="lg:mr-5 xl:h-80 relative block bg-[#F8F1F1] overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+  class="lg:mr-5 xl:h-80 relative block mb-5 bg-[#F8F1F1] overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
 >
   <span
     class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-[#E57C23] to-[#E8AA42]"
@@ -38,7 +38,7 @@ export default function Roadmap(){
 
 <a
   
-  class="lg:mr-5 xl:h-80 relative block bg-[#F8F1F1] overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+  class="lg:mr-5 xl:h-80 relative block mb-5 bg-[#F8F1F1] overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
 >
   <span
     class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-[#E57C23] to-[#E8AA42]"
@@ -67,7 +67,7 @@ export default function Roadmap(){
 
 <a
   
-  class="lg:mr-5 xl:h-80 relative block bg-[#F8F1F1] overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+  class="lg:mr-5 xl:h-80 relative block mb-5 bg-[#F8F1F1] overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
 >
   <span
     class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-[#E57C23] to-[#E8AA42]"
