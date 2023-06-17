@@ -9,7 +9,7 @@ export default function Navbar(){
     const [hide,setHide] = useState(true)
     return(
         <div className="relative z-10">
-        <div className=" w-screen md:py-0 py-4 md:h-16 xl:h-28 bg-gradient-to-r from-[#E57C23] to-[#E8AA42] md:justify-between md:flex md:items-center">
+        <div className=" w-screen md:py-0 py-4 md:h-16 xl:h-24 bg-gradient-to-r from-[#E57C23] to-[#E8AA42] md:justify-between md:flex md:items-center">
             <div className="flex justify-between">
             <Image src={logo} className="ml-4 w-16 xl:ml-16 xl:w-32 xl:h-28"></Image>
             <a href="/" className="text-white -ml-48 xl:-ml-0 self-center font-Orbitron xl:text-6xl select-none">$BOB</a>

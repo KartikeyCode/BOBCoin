@@ -49,6 +49,10 @@ export default function Tokenomics(){
     </div>
   </div>
 </div>
+  </div>
+
+<div className="xl:my-8 xl:flex justify-evenly text-center ">
+
 <div
   class="mr-2 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl"
 >
