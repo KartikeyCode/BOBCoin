@@ -2,7 +2,7 @@ export default function Tokenomics(){
     return(
             <div className="mx-8 my-16 xl:my-60 md:mx-28 md:my-32">
         <h1 className="font-bold text-white font-Orbitron md:text-5xl xl:text-7xl">TOKENOMICS</h1>
-        <h1 className="mt-4 xl:mt-8 font-bold text-white font-Orbitron md:text-5xl xl:text-7xl">Total Supply: 420,000,000</h1>
+        <h1 className="mt-4 xl:mt-8 font-bold text-white font-Orbitron md:text-5xl xl:text-5xl">Total Supply: 420,000,000</h1>
             <div className="xl:my-8 xl:flex justify-around text-center ">
         <div id="Tokenomics"
   class="mr-2 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl"
