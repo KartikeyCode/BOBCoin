@@ -6,31 +6,31 @@ export default function Footer(){
   <div class="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
     <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-          About
+        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Features">
+          Features
         </a>
       </li>
 
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-          Careers
+        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Tokenomics">
+          Tokenomics
         </a>
       </li>
 
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-          History
+        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Roadmap">
+          Roadmap
         </a>
       </li>
 
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-          Services
+        <a class="text-gray-700 transition hover:text-gray-700/75" href="#How">
+          How To Buy
         </a>
       </li>
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-          Blog
+        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Contact">
+          Contact
         </a>
       </li>
     </ul>
