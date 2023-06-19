@@ -2,7 +2,7 @@ export default function Tokenomics(){
     return(
             <div className="mx-8 my-16 xl:my-60 md:mx-28 md:my-32">
         <h1 className="font-bold text-white font-Orbitron md:text-5xl xl:text-7xl">TOKENOMICS</h1>
-        <h1 className="mt-4 xl:mt-8 font-bold text-white font-Orbitron md:text-5xl xl:text-5xl">Total Supply: 420,000,000</h1>
+        <h1 className="mt-4 xl:mt-8 font-bold text-white font-Orbitron md:text-5xl xl:text-5xl">Total Supply: 1,500,000,000</h1>
             <div className="xl:my-8 xl:flex justify-around text-center ">
         <div id="Tokenomics"
   class="mr-2 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl"
@@ -14,7 +14,7 @@ export default function Tokenomics(){
       </h3>
 
       <p class="md:text-lg mt-2 text-sm xl:text-2xl text-gray-500">
-        10/10
+        7/7
       </p>
     </div>
   </div>
@@ -29,7 +29,7 @@ export default function Tokenomics(){
       </h3>
 
       <p class="text-center md:text-lg mt-2 xl:text-2xl text-gray-500">
-        7%
+        3%
       </p>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default function Tokenomics(){
       </h3>
 
       <p class=" md:text-lg mt-2 text-sm xl:text-2xl text-gray-500 ">
-        3%
+        1%
       </p>
     </div>
   </div>
@@ -59,11 +59,11 @@ export default function Tokenomics(){
   <div class="block rounded-xl xl:w-72 bg-[#F8F1F1] p-4 sm:p-6 lg:p-8">
     <div class="py-4">
       <h3 class="md:text-2xl font-bold text-black xl:text-3xl sm:text-xl">
-        BURNING
+        LIQUIDITY POOL 
       </h3>
 
       <p class="text-center md:text-lg mt-2 xl:text-2xl text-gray-500">
-        70%
+        2%
       </p>
     </div>
     
@@ -75,11 +75,11 @@ export default function Tokenomics(){
   <div class="block rounded-xl xl:w-72 bg-[#F8F1F1] p-4 sm:p-6 lg:p-8">
     <div class="py-4">
       <h3 class="md:text-2xl font-bold text-black xl:text-3xl sm:text-xl">
-        PRESALE & LP
+        DEV AND TEAM
       </h3>
 
       <p class="text-center md:text-lg mt-2 xl:text-2xl text-gray-500">
-        30%
+        1%
       </p>
     </div>
   </div>
