@@ -98,7 +98,7 @@ export default function Features(){
       Limited Supply
       </h3>
 
-      <p class="md:text-lg mt-2 text-sm text-gray-500">
+      <p class="md:text-lg xl:h-44 mt-2 text-sm text-gray-500">
       With a total supply of 1.5 billion, $BOB offers a balance between scarcity and accessibility. The limited supply makes each $BOB more valuable and encourages early adoption. 
       </p>
     </div>
@@ -108,7 +108,7 @@ export default function Features(){
 <div
   class=" my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl"
 >
-  <div class="block rounded-xl bg-[#F8F1F1] p-4 sm:p-6 lg:p-8" >
+  <div class="block rounded-xl xl:h-80 bg-[#F8F1F1] p-4 sm:p-6 lg:p-8" >
     <div class="py-4">
       <h3 class="md:text-2xl font-bold text-black xl:text-3xl sm:text-xl">
       Developer Support
