@@ -83,7 +83,7 @@ export default function Features(){
       </h3>
 
       <p class="md:text-lg mt-2 text-sm text-gray-500">
-      A sell transaction tax of 7% discourages selling and promotes holding, thereby making $BOB a deflationary token. If you attempt to sell within 30 minutes of purchase, the sell transaction tax increases to 20-30%.
+      A sell transaction tax of 7% discourages selling and promotes holding, thereby making $BOB a deflationary token. 
       </p>
     </div>
   </div>
