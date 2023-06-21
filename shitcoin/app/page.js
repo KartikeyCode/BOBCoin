@@ -6,6 +6,7 @@ import Tokenomics from "./components/tokenomics"
 import {How}  from "./components/how"
 import Roadmap from "./components/roadmap"
 import Footer from "./components/footer"
+import Team from "./components/team"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Tokenomics></Tokenomics>
         <How></How>
         <Roadmap></Roadmap>
+        <Team></Team>
         <Footer></Footer>
       </div>
   )
