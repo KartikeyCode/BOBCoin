@@ -61,7 +61,7 @@ export default function Tokenomics() {
               </h3>
 
               <p className="text-center md:text-lg mt-2 xl:text-2xl text-gray-500">
-                2%
+                1%
               </p>
             </div>
           </div>
