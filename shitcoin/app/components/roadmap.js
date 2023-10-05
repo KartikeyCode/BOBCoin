@@ -18,7 +18,7 @@ export default function Roadmap(){
   <div className="sm:flex sm:justify-between sm:gap-4">
     <div>
       <h3 className="text-lg  font-bold text-gray-900 lg:text-3xl sm:text-xl">
-        Q2 2023
+        Q4 2023
       </h3>
 
     </div>
@@ -50,7 +50,7 @@ BRC20: Develop strategies to leverage the narratives of ordinals and BRC20 stand
   <div className="sm:flex sm:justify-between sm:gap-4">
     <div>
       <h3 className="text-lg font-bold text-gray-900 lg:text-3xl sm:text-xl">
-        Q3 2023
+        Q1 2024
       </h3>
 
     </div>
@@ -80,7 +80,7 @@ Continuous Market Analysis: Conduct regular market analysis to monitor the coin'
   <div className="sm:flex sm:justify-between sm:gap-4">
     <div>
       <h3 className="text-lg font-bold text-gray-900 lg:text-3xl sm:text-xl">
-        Q4 2023
+        Q2 2024
       </h3>
 
     </div>
