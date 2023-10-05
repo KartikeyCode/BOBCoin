@@ -17,7 +17,7 @@ export default function Home() {
         <Tokenomics></Tokenomics>
         <How></How>
         <Roadmap></Roadmap>
-        <Team></Team>
+        {/* <Team></Team> */}
         <Footer></Footer>
       </div>
   )

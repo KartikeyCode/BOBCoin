@@ -14,7 +14,7 @@ export default function About(){
 
             </div>
             <div className=" flex justify-center gap-8 md:gap-20  ">
-                <Link href="https://pancakeswap.finance/swap?outputCurrency=0xeAC2D7fE92342296299bB1c782b94b9E3EBb2890" target="_blank" >
+                <Link href="https://pancakeswap.finance/swap?outputCurrency=0xE89715D87C33221bc76b4F3162Cc4a1CB0da0E19" target="_blank" >
                 <button  id="Buy" className="bg-[#fb7405] hover:scale-125 transition-transform text-white text-2xl lg:text-4xl font-Orbitron p-3 rounded-xl border-4 border-white ">Buy Tokens</button>
                 </Link>
 
