@@ -2,50 +2,50 @@ export default function Footer(){
     return(
         <div>
 
-<footer class=" bg-gradient-to-r from-[#E57C23] to-[#E8AA42]">
-  <div class="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
-    <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
+<footer className=" bg-gradient-to-r from-[#E57C23] to-[#E8AA42]">
+  <div className="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
+    <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Features">
+        <a className="text-gray-700 transition hover:text-gray-700/75" href="#Features">
           Features
         </a>
       </li>
 
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Tokenomics">
+        <a className="text-gray-700 transition hover:text-gray-700/75" href="#Tokenomics">
           Tokenomics
         </a>
       </li>
 
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Roadmap">
+        <a className="text-gray-700 transition hover:text-gray-700/75" href="#Roadmap">
           Roadmap
         </a>
       </li>
 
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="#How">
+        <a className="text-gray-700 transition hover:text-gray-700/75" href="#How">
           How To Buy
         </a>
       </li>
       <li>
-        <a class="text-gray-700 transition hover:text-gray-700/75" href="#Contact">
+        <a className="text-gray-700 transition hover:text-gray-700/75" href="#Contact">
           Contact
         </a>
       </li>
     </ul>
 
-    <ul class="mt-12 flex justify-center gap-6 md:gap-8">
+    <ul className="mt-12 flex justify-center gap-6 md:gap-8">
       <li>
         <a
           href="/"
           rel="noreferrer"
           target="_blank"
-          class="text-gray-700 transition hover:text-gray-700/75"
+          className="text-gray-700 transition hover:text-gray-700/75"
         >
-          <span class="sr-only">Facebook</span>
+          <span className="sr-only">Facebook</span>
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -64,11 +64,11 @@ export default function Footer(){
           href="/"
           rel="noreferrer"
           target="_blank"
-          class="text-gray-700 transition hover:text-gray-700/75"
+          className="text-gray-700 transition hover:text-gray-700/75"
         >
-          <span class="sr-only">Instagram</span>
+          <span className="sr-only">Instagram</span>
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -87,11 +87,11 @@ export default function Footer(){
           href="/"
           rel="noreferrer"
           target="_blank"
-          class="text-gray-700 transition hover:text-gray-700/75"
+          className="text-gray-700 transition hover:text-gray-700/75"
         >
-          <span class="sr-only">Twitter</span>
+          <span className="sr-only">Twitter</span>
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -108,11 +108,11 @@ export default function Footer(){
           href="/"
           rel="noreferrer"
           target="_blank"
-          class="text-gray-700 transition hover:text-gray-700/75"
+          className="text-gray-700 transition hover:text-gray-700/75"
         >
-          <span class="sr-only">GitHub</span>
+          <span className="sr-only">GitHub</span>
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -131,11 +131,11 @@ export default function Footer(){
           href="/"
           rel="noreferrer"
           target="_blank"
-          class="text-gray-700 transition hover:text-gray-700/75"
+          className="text-gray-700 transition hover:text-gray-700/75"
         >
-          <span class="sr-only">Dribbble</span>
+          <span className="sr-only">Dribbble</span>
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
