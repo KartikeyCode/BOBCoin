@@ -9,6 +9,10 @@ export default function About(){
         <h2 className="xl:text-3xl md:text-xl font-Roboto my-8 md:my-12 text-white">$BOB is a groundbreaking token built on the Binance Smart Chain (BSC) that aims to bridge the gap between two of the most influential cryptocurrencies - Bitcoin (BTC) and Binance Coin (BNB). As the first of its kind, $BOB embodies the robustness of Bitcoin and the flexibility of BNB, offering a unique investment opportunity in the crypto space.</h2>
         <h2 className="xl:text-3xl md:text-xl font-Roboto my-8 md:my-12 text-white">With a total supply of 1 billion tokens, $BOB employs a strategic transaction tax structure to foster a healthy and sustainable ecosystem. A 9% tax is applied to all sell transactions, which increases to 20-30% for transactions occurring within the first 30 minutes of purchase. This is designed to discourage rapid trading and promote long-term holding. </h2>    
         <h2 className="xl:text-3xl md:text-xl font-Roboto my-8 md:my-12 text-white"> Join us on this exciting journey as we venture into a new era of cryptocurrency, where Bitcoin and BNB are no longer worlds apart, but part of a unified and prosperous ecosystem. Welcome to the future. Welcome to $BOB. </h2>
+
+            </div>
+            <div className=" flex justify-center ">
+                <button className="bg-[#fb7405] hover:scale-125 transition-transform text-white text-2xl lg:text-4xl font-Orbitron p-3 rounded-xl border-4 border-white ">Buy Now</button>
             </div>
         </div>
     )
