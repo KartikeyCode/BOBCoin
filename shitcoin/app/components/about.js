@@ -18,7 +18,11 @@ export default function About(){
                 <button  id="Buy" className="bg-[#fb7405] hover:scale-125 transition-transform text-white text-2xl lg:text-4xl font-Orbitron p-3 rounded-xl border-4 border-white ">Buy Tokens</button>
                 </Link>
 
-                <Link href="https://t.me/MYROSLAVAMYSTERYLAUNCH" target="_blank" >
+                <Link href="https://poocoin.app/tokens/0xe89715d87c33221bc76b4f3162cc4a1cb0da0e19" target="_blank" >
+                <button  id="Buy" className="bg-[#fb7405] hover:scale-125 transition-transform text-white text-2xl lg:text-4xl font-Orbitron p-3 rounded-xl border-4 border-white ">See Chart</button>
+                </Link>
+
+                <Link href="https://t.me/BTCONBNB_BOB" target="_blank" >
                 <button  id="Buy" className="bg-[#fb7405] hover:scale-125 transition-transform text-white text-2xl lg:text-4xl font-Orbitron p-3 rounded-xl border-4 border-white ">Join Community</button>
                 </Link>
             </div>

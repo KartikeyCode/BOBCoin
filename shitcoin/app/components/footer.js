@@ -29,7 +29,7 @@ export default function Footer(){
         </a>
       </li>
       <li>
-        <a className="text-gray-700 transition hover:text-gray-700/75" href="https://t.me/MYROSLAVAMYSTERYLAUNCH" target="_blank">
+        <a className="text-gray-700 transition hover:text-gray-700/75" href="https://t.me/BTCONBNB_BOB" target="_blank">
           Contact
         </a>
       </li>
