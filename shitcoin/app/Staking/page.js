@@ -1,13 +1,16 @@
 "use client"
 import "../globals.css"
+import { useEffect } from "react"
 import Navbar from "../components/navbar"
-import { useAccount } from "wagmi"
+import { useAccount,useSwitchNetwork,useNetwork } from "wagmi"
 import Footer from "../components/footer"
 
 export default function Staking(){
 
     const {address,connector,isConnected} = useAccount()
-
+    const network = useSwitchNetwork({
+        chainId: 69,
+      })
     return(
        <div className="flex flex-col justify-center items-center">
         <Navbar></Navbar>
