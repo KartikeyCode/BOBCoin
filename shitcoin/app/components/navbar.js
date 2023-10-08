@@ -3,7 +3,7 @@ import Image from "next/image"
 import menu from "../../public/menu.png"
 import logo from "../../public/logo.png"
 import { useState } from "react"
-
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function Navbar(){
     const [hide,setHide] = useState(true)
@@ -18,12 +18,12 @@ export default function Navbar(){
             
             <div className={`md:my-0 z-15 md:z-auto mr-20 md:px-0 md:py-0 px-4 py-2 md:block ${hide ? "hidden" : ""}`}>
                 <div className="flex flex-col md:flex-row">
-                <a href="#Features" className="text-white text-sm font-Orbitron mr-6 xl:text-2xl"> Features </a>
-                <a href="#Tokenomics" className="text-white text-sm font-Orbitron mr-6 xl:text-2xl"> Tokenomics </a> 
-                <a href="#Roadmap" className="text-white text-sm font-Orbitron mr-6 xl:text-2xl"> Roadmap </a>
-                <a href="#How" className="text-white text-sm font-Orbitron mr-6 xl:text-2xl"> How To Buy </a>
-                <a href="#Contact" className="text-white text-sm font-Orbitron mr-6 xl:text-2xl"> Contact Us </a>
-
+                <a href="#Features" className="text-white text-sm font-Orbitron mr-6 xl:text-lg"> Features </a>
+                <a href="#Tokenomics" className="text-white text-sm font-Orbitron mr-6 xl:text-lg"> Tokenomics </a> 
+                <a href="#Roadmap" className="text-white text-sm font-Orbitron mr-6 xl:text-lg"> Roadmap </a>
+                <a href="#How" className="text-white text-sm font-Orbitron mr-6 xl:text-lg"> How To Buy </a>
+                <a href="#Contact" className="text-white text-sm font-Orbitron mr-6 xl:text-lg"> Contact Us </a>
+                <ConnectButton/>
                 </div>
                 </div>
         </div>
