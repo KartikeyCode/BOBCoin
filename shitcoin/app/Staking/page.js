@@ -25,7 +25,7 @@ export default function Staking() {
     address,
     token: "0xe89715d87c33221bc76b4f3162cc4a1cb0da0e19",
   });
-  const balance = Number(data.formatted).toFixed(4);
+  const balance = data && Number(data.formatted).toFixed(4);
 
   const [stakeAmount, setStakeAmount] = useState("");
   const [isApproved, setIsApproved] = useState(false);
@@ -904,9 +904,9 @@ export default function Staking() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center pb-40 bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617]">
+    <div className=" flex flex-col justify-center w-full items-center h-screen  bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617]">
       <Navbar></Navbar>
-      <div className="shadow-xl flex-col flex items-center justify-center bg-black border-4 border-yellow-400 lg:w-[90rem] lg:h-[35rem] w-80 h-[40rem] lg:mt-10 mt-4 mb-2 rounded-2xl py-[22rem]">
+      <div className=" mt-24 shadow-xl flex-col flex items-center justify-center bg-black border-4 border-yellow-400 lg:w-[90rem]  w-80 h-[40rem]    rounded-2xl ">
         {isConnected ? (
           <div className="flex-col justify-center items-center">
             <div className="flex lg:flex-row flex-col gap-4 lg:gap-x-32  bg-black rounded-xl shadow-2xl lg:p-4">
