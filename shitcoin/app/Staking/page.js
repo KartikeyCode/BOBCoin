@@ -1459,6 +1459,7 @@ export default function Staking() {
     <div className=" flex flex-col justify-center w-full items-center h-screen  bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617]">
       <Navbar></Navbar>
       <div className=" mt-24 shadow-xl flex-col flex items-center justify-center bg-black border-4 border-yellow-400 lg:w-[90rem]  w-80 h-[40rem]    rounded-2xl ">
+        <p className="text-white ">Staking APY -&gt; 40%</p>
         {isConnected ? (
           <div className="flex-col justify-center items-center">
             <div className="flex lg:flex-row flex-col gap-4 lg:gap-x-32  bg-black rounded-xl shadow-2xl lg:p-4">
