@@ -22,7 +22,7 @@ export function How() {
 
           <div className="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
             <div className="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-              <Image className="w-40 xl:mb-10" src={wallet}></Image>
+              <Image alt="" className="w-40 xl:mb-10" src={wallet}></Image>
 
               <h2 className=" mt-4 text-xl font-medium sm:text-2xl">
                 Create Wallet
@@ -54,7 +54,7 @@ export function How() {
 
           <div className="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
             <div className="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-              <Image className="w-40 xl:mb-10" src={bn}></Image>
+              <Image alt="" className="w-40 xl:mb-10" src={bn}></Image>
 
               <h2 className=" mt-4 text-xl font-medium sm:text-2xl">
                 Get Some BNB
@@ -86,7 +86,7 @@ export function How() {
 
           <div className="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
             <div className="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-              <Image className="w-40 xl:mb-10" src={pan}></Image>
+              <Image alt="" className="w-40 xl:mb-10" src={pan}></Image>
 
               <h2 className=" mt-4 text-xl font-medium sm:text-2xl">
                 Go to PancakeSwap
@@ -123,7 +123,7 @@ export function How() {
 
           <div className="rounded-xl relative flex h-full transform items-end border-2 border-[#E8AA42] bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
             <div className="p-4 !pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-              <Image className="w-80 xl:mb-10" src={swap}></Image>
+              <Image alt="" className="w-80 xl:mb-10" src={swap}></Image>
 
               <h2 className=" mt-4 text-xl font-medium sm:text-2xl">
                 Swap BNB for BOB
