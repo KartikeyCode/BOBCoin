@@ -1427,7 +1427,7 @@ export default function Staking() {
       args: [address, Number(ledgerLengthResponse.data) - 1],
     });
     const response = ledgerLengthResponse.data;
-    amountStaked = ledgerLengthResponse && (Number(ledgerRecordsResponse.data[1]) / 1000000000);
+    amountStaked = ledgerRecordsResponse && ledgerRecordsResponse.data && (Number(ledgerRecordsResponse.data[1]) / 1000000000);
   }
 
   const approveHandler = () => {
