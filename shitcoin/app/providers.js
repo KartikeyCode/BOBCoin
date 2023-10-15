@@ -5,6 +5,7 @@ import {
   RainbowKitProvider,
   getDefaultWallets,
   connectorsForWallets,
+  darkTheme
 } from '@rainbow-me/rainbowkit';
 import {
   argentWallet,
@@ -61,7 +62,9 @@ export function Providers({ children }) {
   React.useEffect(() => setMounted(true), []);
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} appInfo={demoAppInfo}>
+      <RainbowKitProvider theme={darkTheme({
+        accentColor: 'rgb(0,0,0)'
+      })} chains={chains} appInfo={demoAppInfo}>
         {mounted && children}
       </RainbowKitProvider>
     </WagmiConfig>
