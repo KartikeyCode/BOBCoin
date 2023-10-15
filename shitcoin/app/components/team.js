@@ -13,27 +13,27 @@ export default function Team(){
             <div className="xl:my-8 xl:flex justify-around gap-1 text-center ">
             
             <div className="xl:flex-col flex xl:justify-evenly justify-center  items-center mr-2 xl:h-[350px] xl:w-80 w-72 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl">
-                <Image className="rounded-xl xl:w-80 w-48 " src={team1}></Image>
+                <Image alt="" className="rounded-xl xl:w-80 w-48 " src={team1}></Image>
                 <h2 className="text-white font-Orbitron xl:text-xl text-lg"> Jamey Boone </h2>
             </div>
 
             <div className="xl:flex-col flex xl:justify-evenly justify-center  items-center mr-2 xl:h-[350px] xl:w-80 w-72 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl">
-                <Image className="rounded-xl xl:w-80 w-48 " src={team2}></Image>
+                <Image alt="" className="rounded-xl xl:w-80 w-48 " src={team2}></Image>
                 <h2 className="text-white font-Orbitron xl:text-xl text-lg"> Daniel Turner </h2>
             </div>
 
             <div className="xl:flex-col flex xl:justify-evenly justify-center  items-center mr-2 xl:h-[350px] xl:w-80 w-72 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl">
-                <Image className="rounded-xl xl:w-80 w-48 " src={team3}></Image>
+                <Image alt="" className="rounded-xl xl:w-80 w-48 " src={team3}></Image>
                 <h2 className="text-white font-Orbitron xl:text-xl text-lg"> Liam Morgan </h2>
             </div>
 
             <div className="xl:flex-col flex xl:justify-evenly justify-center  items-center mr-2 xl:h-[350px] xl:w-80 w-72 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl">
-                <Image className="rounded-xl xl:w-80 w-48 " src={team4}></Image>
+                <Image alt="" className="rounded-xl xl:w-80 w-48 " src={team4}></Image>
                 <h2 className="text-white font-Orbitron xl:text-xl text-lg"> Andres Morales </h2>
             </div>
 
             <div className="xl:flex-col flex xl:justify-evenly justify-center  items-center mr-2 xl:h-[350px] xl:w-80 w-72 my-4 rounded-2xl bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617] p-1 shadow-xl">
-                <Image className="rounded-xl xl:w-80 w-48 " src={team5}></Image>
+                <Image alt="" className="rounded-xl xl:w-80 w-48 " src={team5}></Image>
                 <h2 className="text-white font-Orbitron xl:text-xl text-lg"> Max Sterling </h2>
             </div>
 

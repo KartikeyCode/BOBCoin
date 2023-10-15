@@ -19,6 +19,7 @@ export default function Home() {
         <Roadmap></Roadmap>
         {/* <Team></Team> */}
         <Footer></Footer>
+
       </div>
   )
 }

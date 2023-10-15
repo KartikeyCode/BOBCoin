@@ -123,34 +123,34 @@ export default function Features() {
 
         <div className="box z-0 opacity-50">
           <div className="">
-            <Image className="w-12 md:w-32" src={logo}></Image>
+            <Image alt="" className="w-12 md:w-32" src={logo}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={bnb}></Image>
+            <Image alt="" className="w-12 md:w-32" src={bnb}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={bitcoin}></Image>
+            <Image alt="" className="w-12 md:w-32" src={bitcoin}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={bnb}></Image>
+            <Image alt="" className="w-12 md:w-32" src={bnb}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={logo}></Image>
+            <Image alt="" className="w-12 md:w-32" src={logo}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={bitcoin}></Image>
+            <Image alt="" className="w-12 md:w-32" src={bitcoin}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={logo}></Image>
+            <Image alt="" className="w-12 md:w-32" src={logo}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={bnb}></Image>
+            <Image alt="" className="w-12 md:w-32" src={bnb}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={logo}></Image>
+            <Image alt="" className="w-12 md:w-32" src={logo}></Image>
           </div>
           <div>
-            <Image className="w-12 md:w-32" src={bitcoin}></Image>
+            <Image alt="" className="w-12 md:w-32" src={bitcoin}></Image>
           </div>
         </div>
       </div>
