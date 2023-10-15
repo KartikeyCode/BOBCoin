@@ -5,7 +5,7 @@ export default function About(){
 
 
     return(
-        <div className="xl:mt-4 mx-8 my-8 md:mx-28 md:my-32 ">
+        <div className="xl:mt-4 mx-8 my-8 md:mx-28 md:my-32 py-10  ">
             <div className="relative z-10 mt-20">
         <h1 className=" font-bold font-Orbitron md:text-5xl xl:text-7xl text-white">ABOUT</h1>
         <h2 className="xl:text-3xl md:text-xl font-Roboto my-8 md:my-12 text-white">$BOB is a groundbreaking token built on the Binance Smart Chain (BSC) that aims to bridge the gap between two of the most influential cryptocurrencies - Bitcoin (BTC) and Binance Coin (BNB). As the first of its kind, $BOB embodies the robustness of Bitcoin and the flexibility of BNB, offering a unique investment opportunity in the crypto space.</h2>
