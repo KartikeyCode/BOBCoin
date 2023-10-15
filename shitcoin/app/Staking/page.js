@@ -10,6 +10,7 @@ import {
   useBalance,
   useContractWrite,
   useWaitForTransaction,
+  useContractRead,
 } from "wagmi";
 import Footer from "../components/footer";
 import Logo from "../../public/logo.png";
@@ -17,7 +18,7 @@ import arrow from "../../public/arrow.png";
 import stakingAbi from "../config/abi/staking";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 export default function Staking() {
   const { isConnected, address } = useAccount();
@@ -26,9 +27,9 @@ export default function Staking() {
     token: "0xe89715d87c33221bc76b4f3162cc4a1cb0da0e19",
   });
   const balance = data && Number(data.formatted).toFixed(4);
-
-  const [stakeAmount, setStakeAmount] = useState("");
   const [isApproved, setIsApproved] = useState(false);
+  const [ledgerLengthState, setLedgerLengthState] = useState(0);
+  const [stakeAmount, setStakeAmount] = useState("");
 
   const {
     data: stakeResponse,
@@ -39,270 +40,270 @@ export default function Staking() {
     address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
     abi: [
       {
-        "inputs": [
+        inputs: [
           {
-            "internalType": "uint256",
-            "name": "i",
-            "type": "uint256"
-          }
+            internalType: "uint256",
+            name: "i",
+            type: "uint256",
+          },
         ],
-        "name": "end",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+        name: "end",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
       },
       {
-        "inputs": [
+        inputs: [
           {
-            "internalType": "uint256",
-            "name": "_lower",
-            "type": "uint256"
+            internalType: "uint256",
+            name: "_lower",
+            type: "uint256",
           },
           {
-            "internalType": "uint256",
-            "name": "_maturity",
-            "type": "uint256"
+            internalType: "uint256",
+            name: "_maturity",
+            type: "uint256",
           },
           {
-            "internalType": "uint8",
-            "name": "_rate",
-            "type": "uint8"
+            internalType: "uint8",
+            name: "_rate",
+            type: "uint8",
           },
           {
-            "internalType": "uint8",
-            "name": "_penalization",
-            "type": "uint8"
-          }
+            internalType: "uint8",
+            name: "_penalization",
+            type: "uint8",
+          },
         ],
-        "name": "set",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+        name: "set",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
       },
       {
-        "inputs": [
+        inputs: [
           {
-            "internalType": "contract IERC20",
-            "name": "_erc20",
-            "type": "address"
+            internalType: "contract IERC20",
+            name: "_erc20",
+            type: "address",
           },
           {
-            "internalType": "uint8",
-            "name": "_rate",
-            "type": "uint8"
+            internalType: "uint8",
+            name: "_rate",
+            type: "uint8",
           },
           {
-            "internalType": "uint8",
-            "name": "_penalization",
-            "type": "uint8"
-          }
+            internalType: "uint8",
+            name: "_penalization",
+            type: "uint8",
+          },
         ],
-        "stateMutability": "nonpayable",
-        "type": "constructor"
+        stateMutability: "nonpayable",
+        type: "constructor",
       },
       {
-        "anonymous": false,
-        "inputs": [
+        anonymous: false,
+        inputs: [
           {
-            "indexed": true,
-            "internalType": "address",
-            "name": "user",
-            "type": "address"
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
           },
           {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "value",
-            "type": "uint256"
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
           },
           {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "penalty",
-            "type": "uint256"
+            indexed: false,
+            internalType: "uint256",
+            name: "penalty",
+            type: "uint256",
           },
           {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "interest",
-            "type": "uint256"
+            indexed: false,
+            internalType: "uint256",
+            name: "interest",
+            type: "uint256",
           },
           {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "index",
-            "type": "uint256"
-          }
+            indexed: false,
+            internalType: "uint256",
+            name: "index",
+            type: "uint256",
+          },
         ],
-        "name": "StakeEnd",
-        "type": "event"
+        name: "StakeEnd",
+        type: "event",
       },
       {
-        "anonymous": false,
-        "inputs": [
+        anonymous: false,
+        inputs: [
           {
-            "indexed": true,
-            "internalType": "address",
-            "name": "user",
-            "type": "address"
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
           },
           {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "value",
-            "type": "uint256"
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
           },
           {
-            "indexed": false,
-            "internalType": "uint256",
-            "name": "index",
-            "type": "uint256"
-          }
+            indexed: false,
+            internalType: "uint256",
+            name: "index",
+            type: "uint256",
+          },
         ],
-        "name": "StakeStart",
-        "type": "event"
+        name: "StakeStart",
+        type: "event",
       },
       {
-        "inputs": [
+        inputs: [
           {
-            "internalType": "uint256",
-            "name": "_value",
-            "type": "uint256"
-          }
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
         ],
-        "name": "start",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
+        name: "start",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
       },
       {
-        "inputs": [],
-        "name": "asset",
-        "outputs": [
+        inputs: [],
+        name: "asset",
+        outputs: [
           {
-            "internalType": "contract IERC20",
-            "name": "",
-            "type": "address"
-          }
+            internalType: "contract IERC20",
+            name: "",
+            type: "address",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
+        stateMutability: "view",
+        type: "function",
       },
       {
-        "inputs": [],
-        "name": "interestRate",
-        "outputs": [
+        inputs: [],
+        name: "interestRate",
+        outputs: [
           {
-            "internalType": "uint8",
-            "name": "",
-            "type": "uint8"
-          }
+            internalType: "uint8",
+            name: "",
+            type: "uint8",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
+        stateMutability: "view",
+        type: "function",
       },
       {
-        "inputs": [
+        inputs: [
           {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
+            internalType: "address",
+            name: "",
+            type: "address",
           },
           {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
         ],
-        "name": "ledger",
-        "outputs": [
+        name: "ledger",
+        outputs: [
           {
-            "internalType": "uint256",
-            "name": "from",
-            "type": "uint256"
+            internalType: "uint256",
+            name: "from",
+            type: "uint256",
           },
           {
-            "internalType": "uint256",
-            "name": "amount",
-            "type": "uint256"
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
           },
           {
-            "internalType": "uint256",
-            "name": "penalization",
-            "type": "uint256"
+            internalType: "uint256",
+            name: "penalization",
+            type: "uint256",
           },
           {
-            "internalType": "uint256",
-            "name": "to",
-            "type": "uint256"
+            internalType: "uint256",
+            name: "to",
+            type: "uint256",
           },
           {
-            "internalType": "bool",
-            "name": "ended",
-            "type": "bool"
-          }
+            internalType: "bool",
+            name: "ended",
+            type: "bool",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
+        stateMutability: "view",
+        type: "function",
       },
       {
-        "inputs": [
+        inputs: [
           {
-            "internalType": "address",
-            "name": "_address",
-            "type": "address"
-          }
+            internalType: "address",
+            name: "_address",
+            type: "address",
+          },
         ],
-        "name": "ledgerLength",
-        "outputs": [
+        name: "ledgerLength",
+        outputs: [
           {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
+        stateMutability: "view",
+        type: "function",
       },
       {
-        "inputs": [],
-        "name": "lowerAmount",
-        "outputs": [
+        inputs: [],
+        name: "lowerAmount",
+        outputs: [
           {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
+        stateMutability: "view",
+        type: "function",
       },
       {
-        "inputs": [],
-        "name": "maturity",
-        "outputs": [
+        inputs: [],
+        name: "maturity",
+        outputs: [
           {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
+        stateMutability: "view",
+        type: "function",
       },
       {
-        "inputs": [],
-        "name": "penalizationRate",
-        "outputs": [
+        inputs: [],
+        name: "penalizationRate",
+        outputs: [
           {
-            "internalType": "uint8",
-            "name": "",
-            "type": "uint8"
-          }
+            internalType: "uint8",
+            name: "",
+            type: "uint8",
+          },
         ],
-        "stateMutability": "view",
-        "type": "function"
-      }
+        stateMutability: "view",
+        type: "function",
+      },
     ],
     functionName: "start",
     chainId: 56,
@@ -878,13 +879,564 @@ export default function Staking() {
     hash: approveResponse?.hash,
   });
 
+  const ledgerLengthResponse = useContractRead({
+    address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+    abi: [
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "i",
+            type: "uint256",
+          },
+        ],
+        name: "end",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "_lower",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "_maturity",
+            type: "uint256",
+          },
+          {
+            internalType: "uint8",
+            name: "_rate",
+            type: "uint8",
+          },
+          {
+            internalType: "uint8",
+            name: "_penalization",
+            type: "uint8",
+          },
+        ],
+        name: "set",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "contract IERC20",
+            name: "_erc20",
+            type: "address",
+          },
+          {
+            internalType: "uint8",
+            name: "_rate",
+            type: "uint8",
+          },
+          {
+            internalType: "uint8",
+            name: "_penalization",
+            type: "uint8",
+          },
+        ],
+        stateMutability: "nonpayable",
+        type: "constructor",
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "penalty",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "interest",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "index",
+            type: "uint256",
+          },
+        ],
+        name: "StakeEnd",
+        type: "event",
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "index",
+            type: "uint256",
+          },
+        ],
+        name: "StakeStart",
+        type: "event",
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "start",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "asset",
+        outputs: [
+          {
+            internalType: "contract IERC20",
+            name: "",
+            type: "address",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "interestRate",
+        outputs: [
+          {
+            internalType: "uint8",
+            name: "",
+            type: "uint8",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        name: "ledger",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "from",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "penalization",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "to",
+            type: "uint256",
+          },
+          {
+            internalType: "bool",
+            name: "ended",
+            type: "bool",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "_address",
+            type: "address",
+          },
+        ],
+        name: "ledgerLength",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "lowerAmount",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "maturity",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "penalizationRate",
+        outputs: [
+          {
+            internalType: "uint8",
+            name: "",
+            type: "uint8",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+    ],
+    functionName: "ledgerLength",
+    args: [address],
+  });
+
+  var amountStaked = 0;
+  if (Number(ledgerLengthResponse.data) > 0) {
+    const ledgerRecordsResponse = useContractRead({
+      address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "i",
+              type: "uint256",
+            },
+          ],
+          name: "end",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_lower",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "_maturity",
+              type: "uint256",
+            },
+            {
+              internalType: "uint8",
+              name: "_rate",
+              type: "uint8",
+            },
+            {
+              internalType: "uint8",
+              name: "_penalization",
+              type: "uint8",
+            },
+          ],
+          name: "set",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IERC20",
+              name: "_erc20",
+              type: "address",
+            },
+            {
+              internalType: "uint8",
+              name: "_rate",
+              type: "uint8",
+            },
+            {
+              internalType: "uint8",
+              name: "_penalization",
+              type: "uint8",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "penalty",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "interest",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "StakeEnd",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "user",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "StakeStart",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_value",
+              type: "uint256",
+            },
+          ],
+          name: "start",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "asset",
+          outputs: [
+            {
+              internalType: "contract IERC20",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "interestRate",
+          outputs: [
+            {
+              internalType: "uint8",
+              name: "",
+              type: "uint8",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "ledger",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "from",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "penalization",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "to",
+              type: "uint256",
+            },
+            {
+              internalType: "bool",
+              name: "ended",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_address",
+              type: "address",
+            },
+          ],
+          name: "ledgerLength",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "lowerAmount",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "maturity",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "penalizationRate",
+          outputs: [
+            {
+              internalType: "uint8",
+              name: "",
+              type: "uint8",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+      ],
+      functionName: "ledger",
+      args: [address, Number(ledgerLengthResponse.data) - 1],
+    });
+    const response = ledgerLengthResponse.data;
+    amountStaked = Number(ledgerRecordsResponse.data[1]) / 1000000000;
+  }
+
   const approveHandler = () => {
     try {
       approveHook({
         from: address,
         args: [
           "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
-          Math.floor(Number(stakeAmount))* 1000000000,
+          Math.floor(Number(stakeAmount)) * 1000000000,
         ],
       });
     } catch (error) {
@@ -896,7 +1448,7 @@ export default function Staking() {
     try {
       stakeHook({
         from: address,
-        args: [Math.floor(Number(stakeAmount))* 1000000000],
+        args: [Math.floor(Number(stakeAmount)) * 1000000000],
       });
     } catch (error) {
       toast.error("error staking $BOB");
@@ -917,14 +1469,26 @@ export default function Staking() {
                     {" "}
                     $BOB{" "}
                   </h1>
-                  <h2 className="text-white font-Orbitron lg:text-lg text-sm ml-6">
-                    {" "}
-                    Balance:{" "}
-                  </h2>
-                  <h2 className="text-white font-mono lg:text-lg text-sm lg:mt-0 ml-1 pt-1">
-                    {" "}
-                    {balance}
-                  </h2>
+                  <div className="flex items-center">
+                    <h2 className="text-white font-Orbitron lg:text-lg text-sm ml-6">
+                      {" "}
+                      Balance:{" "}
+                    </h2>
+                    <h2 className="text-white font-mono lg:text-lg text-sm lg:mt-0 ml-1 pt-1">
+                      {" "}
+                      {balance}
+                    </h2>
+                  </div>
+                  <div className="flex items-center">
+                    <h2 className="text-white font-Orbitron lg:text-lg text-sm ml-6">
+                      {" "}
+                      Staked Amount:{" "}
+                    </h2>
+                    <h2 className="text-white font-mono lg:text-lg text-sm lg:mt-0 ml-1 pt-1">
+                      {" "}
+                      {amountStaked && amountStaked} $BOB
+                    </h2>
+                  </div>
                 </div>
 
                 <div className="bubble1  lg:ml-5 flex-col p-4 flex items-center justify-center bg-gray-800 lg:w-[30rem] lg:p-6 w-72 h-36 lg:h-36 rounded-3xl self-center">
