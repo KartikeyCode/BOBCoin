@@ -1427,8 +1427,289 @@ export default function Staking() {
       args: [address, Number(ledgerLengthResponse.data) - 1],
     });
     const response = ledgerLengthResponse.data;
-    amountStaked = ledgerRecordsResponse && ledgerRecordsResponse.data && (Number(ledgerRecordsResponse.data[1]) / 1000000000);
+    amountStaked =
+      ledgerRecordsResponse &&
+      ledgerRecordsResponse.data &&
+      Number(ledgerRecordsResponse.data[1]) / 1000000000;
   }
+
+  const {
+    data: unstakeResponse,
+    isError: unstakeError,
+    isSuccess: unstakeSuccess,
+    write: unstakeHook,
+  } = useContractWrite({
+    address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+    abi: [
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "i",
+            type: "uint256",
+          },
+        ],
+        name: "end",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "_lower",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "_maturity",
+            type: "uint256",
+          },
+          {
+            internalType: "uint8",
+            name: "_rate",
+            type: "uint8",
+          },
+          {
+            internalType: "uint8",
+            name: "_penalization",
+            type: "uint8",
+          },
+        ],
+        name: "set",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "contract IERC20",
+            name: "_erc20",
+            type: "address",
+          },
+          {
+            internalType: "uint8",
+            name: "_rate",
+            type: "uint8",
+          },
+          {
+            internalType: "uint8",
+            name: "_penalization",
+            type: "uint8",
+          },
+        ],
+        stateMutability: "nonpayable",
+        type: "constructor",
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "penalty",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "interest",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "index",
+            type: "uint256",
+          },
+        ],
+        name: "StakeEnd",
+        type: "event",
+      },
+      {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "user",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "index",
+            type: "uint256",
+          },
+        ],
+        name: "StakeStart",
+        type: "event",
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "start",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "asset",
+        outputs: [
+          {
+            internalType: "contract IERC20",
+            name: "",
+            type: "address",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "interestRate",
+        outputs: [
+          {
+            internalType: "uint8",
+            name: "",
+            type: "uint8",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        name: "ledger",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "from",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "penalization",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "to",
+            type: "uint256",
+          },
+          {
+            internalType: "bool",
+            name: "ended",
+            type: "bool",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "_address",
+            type: "address",
+          },
+        ],
+        name: "ledgerLength",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "lowerAmount",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "maturity",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "penalizationRate",
+        outputs: [
+          {
+            internalType: "uint8",
+            name: "",
+            type: "uint8",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+    ],
+    functionName: "end",
+    chainId: 56,
+  });
 
   const approveHandler = () => {
     try {
@@ -1454,6 +1735,17 @@ export default function Staking() {
       toast.error("error staking $BOB");
     }
   };
+
+  const unstakeHandler = () => {
+    try {
+      unstakeHook({
+        from: address,
+        args: [Number(ledgerLengthResponse.data) - 1],
+      });
+    } catch (error) {
+      toast.error("error staking $BOB");
+    }
+  }
 
   return (
     <div className=" flex flex-col justify-center w-full items-center h-screen  bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617]">
@@ -1495,7 +1787,7 @@ export default function Staking() {
                 <div className="bubble1  lg:ml-5 flex-col p-4 flex items-center justify-center bg-gray-800 lg:w-[30rem] lg:p-6 w-72 h-36 lg:h-36 rounded-3xl self-center">
                   <input
                     className="px-10 p-2 rounded-lg bg-gray-800 text-white font-semibold text-center"
-                    placeholder="Enter Stake Amount"
+                    placeholder="Enter Staked Amount"
                     value={stakeAmount}
                     onChange={(e) => setStakeAmount(e.target.value)}
                   />
@@ -1538,35 +1830,53 @@ export default function Staking() {
                 </div>
               </div>
             </div>
-            {isSuccess && (
-              <>
-                <p className="text-white text-center">Approved Successfully.</p>
-                <p className="text-white text-center">
-                  Now Click on the Stake button to stake.
-                </p>
-              </>
-            )}
-            {stakeResponse && (
-              <p className="text-white text-center">Staked Successfully.</p>
-            )}
-            {!isApproved && !isSuccess && (
-              <button
-                onClick={approveHandler}
-                className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
-              >
-                {" "}
-                Approve
-              </button>
-            )}
-            {isSuccess && (
-              <button
-                onClick={stakeHandler}
-                className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
-              >
-                {" "}
-                Stake
-              </button>
-            )}
+            <div className="flex">
+              {isSuccess && (
+                <>
+                  <p className="text-white text-center">
+                    Approved Successfully.
+                  </p>
+                  <p className="text-white text-center">
+                    Now Click on the Stake button to stake.
+                  </p>
+                </>
+              )}
+              {stakeResponse && (
+                <p className="text-white text-center">Staked Successfully.</p>
+              )}
+              {unstakeResponse && (
+                <p className="text-white text-center">Staked Successfully.</p>
+              )}
+              {!isApproved && !isSuccess && (
+                <button
+                  onClick={approveHandler}
+                  className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
+                >
+                  {" "}
+                  Approve
+                </button>
+              )}
+              {isSuccess && (
+                <button
+                  onClick={stakeHandler}
+                  className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
+                >
+                  {" "}
+                  Stake
+                </button>
+              )}
+              <div>
+                {amountStaked > 0 && (
+                  <button
+                    onClick={unstakeHandler}
+                    className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
+                  >
+                    {" "}
+                    Unstake
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         ) : (
           <h1 className="text-white lg:text-2xl font-semibold">
