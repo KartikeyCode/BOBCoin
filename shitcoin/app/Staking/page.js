@@ -37,16 +37,10 @@ export default function Staking() {
     isSuccess: stakeSuccess,
     write: stakeHook,
   } = useContractWrite({
-    address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+    address: "0xFe741e756A9C4eC1071a7f4835287fdCD97A2Cc6",
     abi: [
       {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "i",
-            type: "uint256",
-          },
-        ],
+        inputs: [],
         name: "end",
         outputs: [],
         stateMutability: "nonpayable",
@@ -83,19 +77,22 @@ export default function Staking() {
       {
         inputs: [
           {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "start",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
             internalType: "contract IERC20",
             name: "_erc20",
             type: "address",
-          },
-          {
-            internalType: "uint8",
-            name: "_rate",
-            type: "uint8",
-          },
-          {
-            internalType: "uint8",
-            name: "_penalization",
-            type: "uint8",
           },
         ],
         stateMutability: "nonpayable",
@@ -128,12 +125,6 @@ export default function Staking() {
             name: "interest",
             type: "uint256",
           },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "index",
-            type: "uint256",
-          },
         ],
         name: "StakeEnd",
         type: "event",
@@ -153,28 +144,9 @@ export default function Staking() {
             name: "value",
             type: "uint256",
           },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "index",
-            type: "uint256",
-          },
         ],
         name: "StakeStart",
         type: "event",
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "_value",
-            type: "uint256",
-          },
-        ],
-        name: "start",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
       },
       {
         inputs: [],
@@ -219,7 +191,7 @@ export default function Staking() {
         outputs: [
           {
             internalType: "uint256",
-            name: "from",
+            name: "startTime",
             type: "uint256",
           },
           {
@@ -241,25 +213,6 @@ export default function Staking() {
             internalType: "bool",
             name: "ended",
             type: "bool",
-          },
-        ],
-        stateMutability: "view",
-        type: "function",
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "_address",
-            type: "address",
-          },
-        ],
-        name: "ledgerLength",
-        outputs: [
-          {
-            internalType: "uint256",
-            name: "",
-            type: "uint256",
           },
         ],
         stateMutability: "view",
@@ -299,6 +252,25 @@ export default function Staking() {
             internalType: "uint8",
             name: "",
             type: "uint8",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "account",
+            type: "address",
+          },
+        ],
+        name: "totalTokensStakedBy",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
           },
         ],
         stateMutability: "view",
@@ -879,17 +851,11 @@ export default function Staking() {
     hash: approveResponse?.hash,
   });
 
-  const ledgerLengthResponse = useContractRead({
-    address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+  let amountStaked = useContractRead({
+    address: "0xFe741e756A9C4eC1071a7f4835287fdCD97A2Cc6",
     abi: [
       {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "i",
-            type: "uint256",
-          },
-        ],
+        inputs: [],
         name: "end",
         outputs: [],
         stateMutability: "nonpayable",
@@ -926,19 +892,22 @@ export default function Staking() {
       {
         inputs: [
           {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "start",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
             internalType: "contract IERC20",
             name: "_erc20",
             type: "address",
-          },
-          {
-            internalType: "uint8",
-            name: "_rate",
-            type: "uint8",
-          },
-          {
-            internalType: "uint8",
-            name: "_penalization",
-            type: "uint8",
           },
         ],
         stateMutability: "nonpayable",
@@ -971,12 +940,6 @@ export default function Staking() {
             name: "interest",
             type: "uint256",
           },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "index",
-            type: "uint256",
-          },
         ],
         name: "StakeEnd",
         type: "event",
@@ -996,28 +959,9 @@ export default function Staking() {
             name: "value",
             type: "uint256",
           },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "index",
-            type: "uint256",
-          },
         ],
         name: "StakeStart",
         type: "event",
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "_value",
-            type: "uint256",
-          },
-        ],
-        name: "start",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
       },
       {
         inputs: [],
@@ -1062,7 +1006,7 @@ export default function Staking() {
         outputs: [
           {
             internalType: "uint256",
-            name: "from",
+            name: "startTime",
             type: "uint256",
           },
           {
@@ -1084,25 +1028,6 @@ export default function Staking() {
             internalType: "bool",
             name: "ended",
             type: "bool",
-          },
-        ],
-        stateMutability: "view",
-        type: "function",
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "_address",
-            type: "address",
-          },
-        ],
-        name: "ledgerLength",
-        outputs: [
-          {
-            internalType: "uint256",
-            name: "",
-            type: "uint256",
           },
         ],
         stateMutability: "view",
@@ -1147,291 +1072,31 @@ export default function Staking() {
         stateMutability: "view",
         type: "function",
       },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "account",
+            type: "address",
+          },
+        ],
+        name: "totalTokensStakedBy",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
     ],
-    functionName: "ledgerLength",
+    functionName: "totalTokensStakedBy",
     args: [address],
   });
+  amountStaked = Number(amountStaked.data) / 1000000000;
 
-  var amountStaked = 0;
-  if (Number(ledgerLengthResponse.data) > 0) {
-    const ledgerRecordsResponse = useContractRead({
-      address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
-      abi: [
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "i",
-              type: "uint256",
-            },
-          ],
-          name: "end",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "_lower",
-              type: "uint256",
-            },
-            {
-              internalType: "uint256",
-              name: "_maturity",
-              type: "uint256",
-            },
-            {
-              internalType: "uint8",
-              name: "_rate",
-              type: "uint8",
-            },
-            {
-              internalType: "uint8",
-              name: "_penalization",
-              type: "uint8",
-            },
-          ],
-          name: "set",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "contract IERC20",
-              name: "_erc20",
-              type: "address",
-            },
-            {
-              internalType: "uint8",
-              name: "_rate",
-              type: "uint8",
-            },
-            {
-              internalType: "uint8",
-              name: "_penalization",
-              type: "uint8",
-            },
-          ],
-          stateMutability: "nonpayable",
-          type: "constructor",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: true,
-              internalType: "address",
-              name: "user",
-              type: "address",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "value",
-              type: "uint256",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "penalty",
-              type: "uint256",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "interest",
-              type: "uint256",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "index",
-              type: "uint256",
-            },
-          ],
-          name: "StakeEnd",
-          type: "event",
-        },
-        {
-          anonymous: false,
-          inputs: [
-            {
-              indexed: true,
-              internalType: "address",
-              name: "user",
-              type: "address",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "value",
-              type: "uint256",
-            },
-            {
-              indexed: false,
-              internalType: "uint256",
-              name: "index",
-              type: "uint256",
-            },
-          ],
-          name: "StakeStart",
-          type: "event",
-        },
-        {
-          inputs: [
-            {
-              internalType: "uint256",
-              name: "_value",
-              type: "uint256",
-            },
-          ],
-          name: "start",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "asset",
-          outputs: [
-            {
-              internalType: "contract IERC20",
-              name: "",
-              type: "address",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "interestRate",
-          outputs: [
-            {
-              internalType: "uint8",
-              name: "",
-              type: "uint8",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "",
-              type: "address",
-            },
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          name: "ledger",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "from",
-              type: "uint256",
-            },
-            {
-              internalType: "uint256",
-              name: "amount",
-              type: "uint256",
-            },
-            {
-              internalType: "uint256",
-              name: "penalization",
-              type: "uint256",
-            },
-            {
-              internalType: "uint256",
-              name: "to",
-              type: "uint256",
-            },
-            {
-              internalType: "bool",
-              name: "ended",
-              type: "bool",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_address",
-              type: "address",
-            },
-          ],
-          name: "ledgerLength",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "lowerAmount",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "maturity",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "penalizationRate",
-          outputs: [
-            {
-              internalType: "uint8",
-              name: "",
-              type: "uint8",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-      ],
-      functionName: "ledger",
-      args: [address, Number(ledgerLengthResponse.data) - 1],
-    });
-    const response = ledgerLengthResponse.data;
-    amountStaked =
-      ledgerRecordsResponse &&
-      ledgerRecordsResponse.data &&
-      Number(ledgerRecordsResponse.data[1]) / 1000000000;
-  }
 
   const {
     data: unstakeResponse,
@@ -1439,16 +1104,10 @@ export default function Staking() {
     isSuccess: unstakeSuccess,
     write: unstakeHook,
   } = useContractWrite({
-    address: "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+    address: "0xFe741e756A9C4eC1071a7f4835287fdCD97A2Cc6",
     abi: [
       {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "i",
-            type: "uint256",
-          },
-        ],
+        inputs: [],
         name: "end",
         outputs: [],
         stateMutability: "nonpayable",
@@ -1485,19 +1144,22 @@ export default function Staking() {
       {
         inputs: [
           {
+            internalType: "uint256",
+            name: "_value",
+            type: "uint256",
+          },
+        ],
+        name: "start",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
             internalType: "contract IERC20",
             name: "_erc20",
             type: "address",
-          },
-          {
-            internalType: "uint8",
-            name: "_rate",
-            type: "uint8",
-          },
-          {
-            internalType: "uint8",
-            name: "_penalization",
-            type: "uint8",
           },
         ],
         stateMutability: "nonpayable",
@@ -1530,12 +1192,6 @@ export default function Staking() {
             name: "interest",
             type: "uint256",
           },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "index",
-            type: "uint256",
-          },
         ],
         name: "StakeEnd",
         type: "event",
@@ -1555,28 +1211,9 @@ export default function Staking() {
             name: "value",
             type: "uint256",
           },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "index",
-            type: "uint256",
-          },
         ],
         name: "StakeStart",
         type: "event",
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "_value",
-            type: "uint256",
-          },
-        ],
-        name: "start",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
       },
       {
         inputs: [],
@@ -1621,7 +1258,7 @@ export default function Staking() {
         outputs: [
           {
             internalType: "uint256",
-            name: "from",
+            name: "startTime",
             type: "uint256",
           },
           {
@@ -1643,25 +1280,6 @@ export default function Staking() {
             internalType: "bool",
             name: "ended",
             type: "bool",
-          },
-        ],
-        stateMutability: "view",
-        type: "function",
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "_address",
-            type: "address",
-          },
-        ],
-        name: "ledgerLength",
-        outputs: [
-          {
-            internalType: "uint256",
-            name: "",
-            type: "uint256",
           },
         ],
         stateMutability: "view",
@@ -1701,6 +1319,25 @@ export default function Staking() {
             internalType: "uint8",
             name: "",
             type: "uint8",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "account",
+            type: "address",
+          },
+        ],
+        name: "totalTokensStakedBy",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256",
           },
         ],
         stateMutability: "view",
@@ -1713,10 +1350,14 @@ export default function Staking() {
 
   const approveHandler = () => {
     try {
+      if (stakeAmount < 1000000) {
+        toast.error("amount must be greater than 1000000");
+        return;
+      }
       approveHook({
         from: address,
         args: [
-          "0xfa316D2994D8165a3F50988FDA5ce08880dC7667",
+          "0xFe741e756A9C4eC1071a7f4835287fdCD97A2Cc6",
           Math.floor(Number(stakeAmount)) * 1000000000,
         ],
       });
@@ -1727,6 +1368,10 @@ export default function Staking() {
 
   const stakeHandler = () => {
     try {
+      if (stakeAmount < 1000000) {
+        toast.error("amount must be greater than 1000000");
+        return;
+      }
       stakeHook({
         from: address,
         args: [Math.floor(Number(stakeAmount)) * 1000000000],
@@ -1737,15 +1382,18 @@ export default function Staking() {
   };
 
   const unstakeHandler = () => {
+    if (amountStaked === 0) {
+      toast.error("you don't have any stake amount");
+      return;
+    }
     try {
       unstakeHook({
         from: address,
-        args: [Number(ledgerLengthResponse.data) - 1],
       });
     } catch (error) {
       toast.error("error staking $BOB");
     }
-  }
+  };
 
   return (
     <div className=" flex flex-col justify-center w-full items-center h-screen  bg-gradient-to-r from-[#fb7405] via-[#DBA514] to-[#ffa617]">
@@ -1866,15 +1514,13 @@ export default function Staking() {
                 </button>
               )}
               <div>
-                {amountStaked > 0 && (
-                  <button
-                    onClick={unstakeHandler}
-                    className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
-                  >
-                    {" "}
-                    Unstake
-                  </button>
-                )}
+                <button
+                  onClick={unstakeHandler}
+                  className=" ml-[12rem] hidden lg:flex justify-center items-center mt-10 w-32 h-16 p-2 self-center bg-blend-luminosity bg-[#ffa617] px-5 rounded-full font-semibold border-4 border-yellow-400 hover:scale-110 transition-transform "
+                >
+                  {" "}
+                  Unstake
+                </button>
               </div>
             </div>
           </div>
