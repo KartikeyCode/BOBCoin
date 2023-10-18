@@ -1,0 +1,21 @@
+@keyframes scaleEffect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .button-scale-animation {
+    animation: scaleEffect 1.5s infinite; /* You can adjust the duration (5s) as needed */
+  }
+  
+  /* Add a new class for the button when it's not hovered */
+  .button-scale-animation-not-hovered {
+    animation: normal /* Remove the animation on hover */
+  }
+  

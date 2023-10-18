@@ -45,7 +45,7 @@ export default function ComingSoon(){
           <div className="block xl:h-auto rounded-xl bg-black p-4 sm:p-6 lg:p-8">
             <div className="py-4">
               <h3 className="md:text-2xl font-mono mb-5 font-bold text-white xl:text-3xl sm:text-xl">
-              Staking:
+              Staking: LIVE 🔴
               </h3>
             <div className="flex gap-28">
               <Image className=" rounded-xl  " src={Stake} />
