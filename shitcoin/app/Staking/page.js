@@ -893,13 +893,18 @@ export default function Staking() {
   };
 
   const stakeHandler = () => {
-    try {
-      stakeHook({
-        from: address,
-        args: [Math.floor(Number(stakeAmount))* 1000000000],
-      });
-    } catch (error) {
-      toast.error("error staking $BOB");
+    const amountToStake = Math.floor(Number(stakeAmount)) * 1000000000;
+    if (amountToStake < 1000000) {
+      toast.error("Please stake at least 1000000");
+    } else {
+      try {
+        stakeHook({
+          from: address,
+          args: [amountToStake],
+        });
+      } catch (error) {
+        toast.error("Error staking $BOB");
+      }
     }
   };
 
